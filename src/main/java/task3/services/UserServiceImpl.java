@@ -18,15 +18,14 @@ public class UserServiceImpl implements UserService {
         this.usersDAO = usersDAO;
     }
 
-    @Transactional
     @Override
     public List<User> allUsers() {
         return usersDAO.allUsers();
     }
 
     @Override
-    public void add(User user) {
-        usersDAO.add(user);
+    public int add(User user) {
+        return usersDAO.add(user);
     }
 
     @Override

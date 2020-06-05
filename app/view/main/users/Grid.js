@@ -45,15 +45,6 @@ Ext.define('ExtTask2.view.main.users.Grid', {
             header: 'Delete',
             dataIndex: 'needDelete',
             width: 60
-        }, {
-            xtype: 'actioncolumn',
-            width: 30,
-            sortable: false,
-            menuDisabled: true,
-            items: [{
-                handler: 'onRowRemoveClicked',
-
-            }]
         }],
 
     listeners: [{

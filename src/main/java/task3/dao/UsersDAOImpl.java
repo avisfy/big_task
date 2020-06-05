@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Transactional
 @Repository
 public class UsersDAOImpl implements UsersDAO {
 
@@ -41,21 +42,22 @@ public class UsersDAOImpl implements UsersDAO {
         return (List<User>) session.createQuery("from User").list();
     }
 
-    @Transactional
+
     @Override
-    public void add(User user) {
+    public int add(User user) {
         Session session = sessionFactory.getCurrentSession();
         session.persist(user);
+        return user.getId();
+
     }
 
-    @Transactional
     @Override
     public void delete(User user) {
         Session session = sessionFactory.getCurrentSession();
         session.delete(user);
     }
 
-    @Transactional
+
     @Override
     public void edit(User user) {
         Session session = sessionFactory.getCurrentSession();

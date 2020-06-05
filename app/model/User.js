@@ -2,6 +2,7 @@ Ext.define('ExtTask2.model.User', {
     extend: 'Ext.data.Model',
 
     fields: [
+        {name: 'id',  type: 'int', convert: null},
         {name: 'name',  type: 'string'},
         {name: 'surname', type: 'string'},
         {name: 'email', type: 'string'},
